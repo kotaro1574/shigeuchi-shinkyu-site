@@ -31,7 +31,7 @@ export function MainCarousel() {
       <CarouselContent>
         {carouselItems.map((item, index) => (
           <CarouselItem key={index}>
-            <AspectRatio ratio={16 / 9}>
+            <AspectRatio ratio={15 / 7}>
               <Image
                 src={item}
                 priority={index === 0}
