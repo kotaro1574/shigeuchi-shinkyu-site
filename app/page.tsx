@@ -1,5 +1,9 @@
+"use client"
+
+import Image from "next/image"
 import { TREATMENT_DETAIL_CONTENTS } from "@/constant"
 
+import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Button } from "@/components/ui/button"
 import { Logo } from "@/components/logo"
 import { MainCarousel } from "@/components/main-carouse"
@@ -44,6 +48,31 @@ export default function IndexPage() {
                 isOdd={isOdd(index)}
               />
             ))}
+          </div>
+        </section>
+        <section className="mt-40">
+          <h2>当院について</h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <AspectRatio ratio={16 / 9}>
+              <Image
+                alt={"director_image"}
+                src={"/images/director_image.jpg"}
+                fill
+                className="rounded-lg object-cover"
+              />
+            </AspectRatio>
+            <div>
+              <h3>伝統と現代の技術、最良の治療をあなたへ</h3>
+              <p>
+                当院は、広島県東広島市に位置し、鍼灸、整体、産後骨盤矯正、吸い玉などの治療を組み合わせて、あなたの体調や症状に合わせたケアを提供しています。
+              </p>
+              <p>
+                当院では、痛みや不調の原因をしっかりと捉え、より効果的な治療を目指します。治療の疑問や不安な点、ご相談はお気軽にどうぞ。
+              </p>
+              <p>
+                また、日々の活動や治療情報はInstagramでも更新中。ぜひチェックしてください。
+              </p>
+            </div>
           </div>
         </section>
       </div>
