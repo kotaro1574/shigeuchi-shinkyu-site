@@ -1,7 +1,11 @@
 "use client"
 
 import Image from "next/image"
-import { QUESTIONS_CONTENTS, TREATMENT_DETAIL_CONTENTS } from "@/constant"
+import {
+  CONSULTATION_HOURS,
+  QUESTIONS_CONTENTS,
+  TREATMENT_DETAIL_CONTENTS,
+} from "@/constant"
 
 import {
   Accordion,
@@ -11,6 +15,15 @@ import {
 } from "@/components/ui/accordion"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Button } from "@/components/ui/button"
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 import { Logo } from "@/components/logo"
 import { MainCarousel } from "@/components/main-carouse"
 import { TreatmentDetail } from "@/components/treatment-detail"
@@ -91,6 +104,38 @@ export default function IndexPage() {
               </AccordionItem>
             ))}
           </Accordion>
+        </section>
+        <section className="mt-40">
+          <h2>診療時間</h2>
+          <div className="mt-8 flex justify-center">
+            <Table>
+              <TableCaption>※日曜、祝日はお休みです</TableCaption>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>診療時間</TableHead>
+                  {CONSULTATION_HOURS.weeks.map((week, index) => (
+                    <TableHead key={`week-${index}`}>{week}</TableHead>
+                  ))}
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell>09:00 ~ 18:00</TableCell>
+                  {CONSULTATION_HOURS.mornings.map((morning, index) => (
+                    <TableCell key={`morning-${index}`}>{morning}</TableCell>
+                  ))}
+                </TableRow>
+                <TableRow>
+                  <TableCell>18:00 ~ 21:00</TableCell>
+                  {CONSULTATION_HOURS.afternoons.map((afternoon, index) => (
+                    <TableCell key={`afternoon-${index}`}>
+                      {afternoon}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
         </section>
       </div>
     </div>
