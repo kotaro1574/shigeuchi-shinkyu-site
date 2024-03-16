@@ -1,8 +1,14 @@
 "use client"
 
 import Image from "next/image"
-import { TREATMENT_DETAIL_CONTENTS } from "@/constant"
+import { QUESTIONS_CONTENTS, TREATMENT_DETAIL_CONTENTS } from "@/constant"
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Button } from "@/components/ui/button"
 import { Logo } from "@/components/logo"
@@ -74,6 +80,17 @@ export default function IndexPage() {
               </p>
             </div>
           </div>
+        </section>
+        <section className="mt-40">
+          <h2>よくある質問</h2>
+          <Accordion type="single" collapsible className="w-full">
+            {QUESTIONS_CONTENTS.map((question_content, index) => (
+              <AccordionItem value={`item-${index}`}>
+                <AccordionTrigger>{question_content.question}</AccordionTrigger>
+                <AccordionContent>{question_content.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </section>
       </div>
     </div>
