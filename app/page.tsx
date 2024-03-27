@@ -32,7 +32,7 @@ export default function IndexPage() {
   const isOdd = (index: number) => index % 2 === 0
 
   return (
-    <div className="mx-auto max-w-[980px]">
+    <div className="">
       <MainCarousel />
       <div className="container pb-8 pt-6 md:py-10">
         <h2 className="mx-auto max-w-[350px]">
@@ -54,13 +54,18 @@ export default function IndexPage() {
           <h2 className="mb-6 text-center text-2xl font-bold md:mb-8 md:text-4xl">
             施術について
           </h2>
-          <p>
-            当院では、患者様に安心して治療を受けていただくために、患者様一人ひとりに合わせた治療を行っております。
+          <div className="mb-4">
+            <p>
+              当院では、患者様に安心して治療を受けていただくために、患者様一人ひとりに合わせた治療を行っております。
+              <br />
+              また、治療後のアフターケアも大切にしておりますので、お気軽にご相談ください。
+            </p>
+          </div>
+          <p className="mb-6 text-center font-bold underline">
+            1回
+            <span className="text-3xl">5,000</span>
+            円（税込）
           </p>
-          <p>
-            また、治療後のアフターケアも大切にしておりますので、お気軽にご相談ください。
-          </p>
-          <p>1回 5,000円〜</p>
           <div className="grid gap-20">
             {TREATMENT_DETAIL_CONTENTS.map((treatment, index) => (
               <TreatmentDetail
