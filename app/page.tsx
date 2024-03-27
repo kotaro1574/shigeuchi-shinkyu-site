@@ -32,7 +32,7 @@ export default function IndexPage() {
   const isOdd = (index: number) => index % 2 === 0
 
   return (
-    <div className="mx-auto max-w-[980px]">
+    <div className="">
       <MainCarousel />
       <div className="container pb-8 pt-6 md:py-10">
         <h2 className="mx-auto max-w-[350px]">
@@ -51,14 +51,21 @@ export default function IndexPage() {
           </div>
         </section>
         <section className="mt-40">
-          <h2>施術について</h2>
-          <p>
-            当院では、患者様に安心して治療を受けていただくために、患者様一人ひとりに合わせた治療を行っております。
+          <h2 className="mb-6 text-center text-2xl font-bold md:mb-8 md:text-4xl">
+            施術について
+          </h2>
+          <div className="mb-4">
+            <p>
+              当院では、患者様に安心して治療を受けていただくために、患者様一人ひとりに合わせた治療を行っております。
+              <br />
+              また、治療後のアフターケアも大切にしておりますので、お気軽にご相談ください。
+            </p>
+          </div>
+          <p className="mb-6 text-center font-bold underline">
+            1回
+            <span className="text-3xl">5,000</span>
+            円（税込）
           </p>
-          <p>
-            また、治療後のアフターケアも大切にしておりますので、お気軽にご相談ください。
-          </p>
-          <p>1回 5,000円〜</p>
           <div className="grid gap-20">
             {TREATMENT_DETAIL_CONTENTS.map((treatment, index) => (
               <TreatmentDetail
@@ -70,7 +77,9 @@ export default function IndexPage() {
           </div>
         </section>
         <section className="mt-40">
-          <h2>当院について</h2>
+          <h2 className="mb-6 text-center text-2xl font-bold md:mb-8 md:text-4xl">
+            当院について
+          </h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <AspectRatio ratio={16 / 9}>
               <Image
@@ -95,7 +104,9 @@ export default function IndexPage() {
           </div>
         </section>
         <section className="mt-40">
-          <h2>よくある質問</h2>
+          <h2 className="mb-6 text-center text-2xl font-bold md:mb-8 md:text-4xl">
+            よくある質問
+          </h2>
           <Accordion type="single" collapsible className="w-full">
             {QUESTIONS_CONTENTS.map((question_content, index) => (
               <AccordionItem value={`item-${index}`}>
@@ -106,7 +117,9 @@ export default function IndexPage() {
           </Accordion>
         </section>
         <section className="mt-40">
-          <h2>診療時間</h2>
+          <h2 className="mb-6 text-center text-2xl font-bold md:mb-8 md:text-4xl">
+            診療時間
+          </h2>
           <div className="mt-8 flex justify-center">
             <Table>
               <TableCaption>※日曜、祝日はお休みです</TableCaption>

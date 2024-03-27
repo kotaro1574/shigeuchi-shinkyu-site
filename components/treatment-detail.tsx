@@ -35,9 +35,12 @@ export function TreatmentDetail({ treatment, isOdd }: Props) {
           isOdd ? "left-[50%]" : "left-0"
         } bottom-0 max-w-[50%] bg-accent/70 p-4 backdrop-blur-[3px]`}
       >
-        <div>{treatment.title}</div>
-        <p>{treatment.subTitle}</p>
-        <div>{treatment.description}</div>
+        <h3 className="mb-5 text-2xl font-bold leading-snug">
+          {treatment.title}
+          <br />
+          <span className="inline-block text-xs">{treatment.subTitle}</span>
+        </h3>
+        <p>{treatment.description}</p>
       </div>
     </div>
   )
