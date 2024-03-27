@@ -51,7 +51,9 @@ export default function IndexPage() {
           </div>
         </section>
         <section className="mt-40">
-          <h2>施術について</h2>
+          <h2 className="mb-6 text-center text-2xl font-bold md:mb-8 md:text-4xl">
+            施術について
+          </h2>
           <p>
             当院では、患者様に安心して治療を受けていただくために、患者様一人ひとりに合わせた治療を行っております。
           </p>
@@ -70,7 +72,9 @@ export default function IndexPage() {
           </div>
         </section>
         <section className="mt-40">
-          <h2>当院について</h2>
+          <h2 className="mb-6 text-center text-2xl font-bold md:mb-8 md:text-4xl">
+            当院について
+          </h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <AspectRatio ratio={16 / 9}>
               <Image
@@ -95,7 +99,9 @@ export default function IndexPage() {
           </div>
         </section>
         <section className="mt-40">
-          <h2>よくある質問</h2>
+          <h2 className="mb-6 text-center text-2xl font-bold md:mb-8 md:text-4xl">
+            よくある質問
+          </h2>
           <Accordion type="single" collapsible className="w-full">
             {QUESTIONS_CONTENTS.map((question_content, index) => (
               <AccordionItem value={`item-${index}`}>
@@ -106,7 +112,9 @@ export default function IndexPage() {
           </Accordion>
         </section>
         <section className="mt-40">
-          <h2>診療時間</h2>
+          <h2 className="mb-6 text-center text-2xl font-bold md:mb-8 md:text-4xl">
+            診療時間
+          </h2>
           <div className="mt-8 flex justify-center">
             <Table>
               <TableCaption>※日曜、祝日はお休みです</TableCaption>
